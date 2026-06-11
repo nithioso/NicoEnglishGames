@@ -1,30 +1,20 @@
-# Comandos para subir a GitHub
+# Comandos para actualizar el repo
 
-Desde una carpeta local vacía:
+Desde tu equipo:
 
 ```bash
 git clone https://github.com/nithioso/NicoEnglishGames.git
 cd NicoEnglishGames
 ```
 
-Copia aquí los archivos de este paquete y luego ejecuta:
+Copia aquí todo el contenido de este paquete, reemplazando los archivos anteriores.
+
+Luego ejecuta:
 
 ```bash
 git add .
-git commit -m "Add Nico English Games initial site"
+git commit -m "Improve mobile games and add Travel Detective level 3"
 git push origin main
 ```
 
-Después activa GitHub Pages:
-
-1. Repository → Settings → Pages.
-2. Source: Deploy from a branch.
-3. Branch: main.
-4. Folder: /root.
-5. Save.
-
-URL esperada:
-
-```text
-https://nithioso.github.io/NicoEnglishGames/
-```
+Si GitHub Pages ya está activo desde `main` y `/root`, el sitio se actualizará automáticamente.

@@ -1,62 +1,44 @@
 # Nico English Games
 
-Juegos interactivos para que Nicolás practique inglés desde el navegador.
+Juegos interactivos para que Nicolás practique inglés desde el navegador, con enfoque en vocabulario de viajes, medios de transporte, pasado simple, escucha y conversación.
 
 ## Juegos incluidos
 
-1. **Travel Time Machine**  
+1. **Travel Time Machine 1**  
    Ruta: `games/travel-time-machine-1/`
 
-2. **Travel Time Machine: Levels**  
+2. **Travel Time Machine 2**  
    Ruta: `games/travel-time-machine-2/`
+
+3. **Travel Detective 3: Lost Passport**  
+   Ruta: `games/travel-detective-3/`
+
+## Mejoras de esta versión
+
+- Estructura común con `assets/game-engine.js` y `assets/styles.css`.
+- Diseño mobile-first: no usa drag-and-drop; todas las dinámicas funcionan con toques.
+- Voz en inglés con selector, velocidad, tono y botón de “Best voice”.
+- Retroalimentación motivadora en español colombiano al terminar cada nivel.
+- Progreso guardado en `localStorage` por juego.
+- Game 3 nuevo con lectura, misterio, preguntas WH, orden de eventos y pasado simple.
+- Pruebas automáticas de datos en `tests/validate-games.js`.
 
 ## Publicación en GitHub Pages
 
 Este proyecto es 100% estático: HTML, CSS y JavaScript. No necesita servidor, Node.js ni base de datos.
 
-### Opción recomendada
+Configura GitHub Pages desde la rama `main`, carpeta `/root`.
 
-Publicar desde la rama `main`, carpeta `/root`.
-
-En GitHub:
-
-1. Entrar al repositorio.
-2. Ir a **Settings**.
-3. Entrar a **Pages**.
-4. En **Build and deployment**, seleccionar:
-   - Source: `Deploy from a branch`
-   - Branch: `main`
-   - Folder: `/root`
-5. Guardar.
-
-La URL esperada del sitio será:
-
-`https://nithioso.github.io/NicoEnglishGames/`
-
-## Estructura
+URL esperada:
 
 ```text
-NicoEnglishGames/
-├── index.html
-├── .nojekyll
-├── README.md
-└── games/
-    ├── travel-time-machine-1/
-    │   └── index.html
-    └── travel-time-machine-2/
-        └── index.html
+https://nithioso.github.io/NicoEnglishGames/
 ```
 
-## Cómo agregar nuevos juegos
+## Validación local
 
-Crear una nueva carpeta dentro de `games/`, por ejemplo:
+Con Node.js instalado:
 
-```text
-games/simple-past-quiz/index.html
-```
-
-Luego agregar una tarjeta nueva en el `index.html` principal apuntando a:
-
-```text
-./games/simple-past-quiz/
+```bash
+node tests/validate-games.js
 ```

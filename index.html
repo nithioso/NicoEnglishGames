@@ -1,239 +1,56 @@
 <!doctype html>
-<html lang="es">
+<html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#2563eb">
   <title>Nico English Games</title>
-  <meta name="description" content="Juegos interactivos para practicar inglés: viajes, transportes y pasado simple." />
-  <style>
-    :root{
-      --bg:#08111f;
-      --card:#101d33;
-      --card2:#142641;
-      --text:#f4f7fb;
-      --muted:#b7c5d9;
-      --brand:#6ee7f9;
-      --brand2:#a78bfa;
-      --ok:#34d399;
-      --shadow:0 24px 80px rgba(0,0,0,.35);
-      --radius:24px;
-    }
-    *{box-sizing:border-box}
-    body{
-      margin:0;
-      font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
-      background:
-        radial-gradient(circle at 15% 10%, rgba(110,231,249,.28), transparent 32%),
-        radial-gradient(circle at 88% 18%, rgba(167,139,250,.24), transparent 34%),
-        linear-gradient(135deg,#08111f,#0b1728 55%,#09101d);
-      color:var(--text);
-      min-height:100vh;
-    }
-    header{
-      max-width:1100px;
-      margin:0 auto;
-      padding:56px 22px 26px;
-      text-align:center;
-    }
-    .badge{
-      display:inline-flex;
-      gap:8px;
-      align-items:center;
-      padding:8px 14px;
-      border:1px solid rgba(255,255,255,.16);
-      border-radius:999px;
-      background:rgba(255,255,255,.07);
-      color:var(--muted);
-      font-weight:700;
-      letter-spacing:.2px;
-    }
-    h1{
-      font-size:clamp(2.2rem,6vw,5rem);
-      line-height:.96;
-      margin:20px 0 12px;
-    }
-    .gradient{
-      background:linear-gradient(90deg,var(--brand),var(--brand2));
-      -webkit-background-clip:text;
-      background-clip:text;
-      color:transparent;
-    }
-    .lead{
-      max-width:780px;
-      margin:0 auto;
-      color:var(--muted);
-      font-size:clamp(1.05rem,2.2vw,1.25rem);
-      line-height:1.65;
-    }
-    main{
-      max-width:1100px;
-      margin:0 auto;
-      padding:24px 22px 60px;
-    }
-    .grid{
-      display:grid;
-      grid-template-columns:repeat(2,minmax(0,1fr));
-      gap:22px;
-      margin-top:24px;
-    }
-    .card{
-      position:relative;
-      overflow:hidden;
-      border-radius:var(--radius);
-      background:linear-gradient(180deg,rgba(255,255,255,.08),rgba(255,255,255,.035)), var(--card);
-      border:1px solid rgba(255,255,255,.12);
-      box-shadow:var(--shadow);
-      padding:28px;
-      min-height:350px;
-      display:flex;
-      flex-direction:column;
-      justify-content:space-between;
-    }
-    .card:before{
-      content:"";
-      position:absolute;
-      inset:auto -20% -45% auto;
-      width:260px;
-      height:260px;
-      border-radius:50%;
-      background:rgba(110,231,249,.15);
-      pointer-events:none;
-    }
-    .card.level2:before{background:rgba(167,139,250,.18)}
-    .level-label{
-      color:var(--brand);
-      font-weight:900;
-      text-transform:uppercase;
-      letter-spacing:.12em;
-      font-size:.78rem;
-    }
-    .level2 .level-label{color:var(--brand2)}
-    h2{
-      font-size:2rem;
-      margin:10px 0 10px;
-    }
-    .card p{
-      color:var(--muted);
-      line-height:1.6;
-      margin:0 0 16px;
-    }
-    .tags{
-      display:flex;
-      flex-wrap:wrap;
-      gap:8px;
-      margin:16px 0 24px;
-    }
-    .tag{
-      padding:7px 10px;
-      border-radius:999px;
-      background:rgba(255,255,255,.08);
-      border:1px solid rgba(255,255,255,.1);
-      color:#dbeafe;
-      font-size:.86rem;
-      font-weight:700;
-    }
-    .actions{
-      display:flex;
-      gap:12px;
-      flex-wrap:wrap;
-      position:relative;
-      z-index:1;
-    }
-    a.button{
-      display:inline-flex;
-      align-items:center;
-      justify-content:center;
-      gap:8px;
-      text-decoration:none;
-      border:none;
-      border-radius:16px;
-      padding:14px 18px;
-      font-weight:900;
-      color:#08111f;
-      background:linear-gradient(90deg,var(--brand),#d9f99d);
-      box-shadow:0 12px 28px rgba(110,231,249,.2);
-    }
-    .level2 a.button{background:linear-gradient(90deg,var(--brand2),#f0abfc)}
-    a.secondary{
-      color:var(--text);
-      background:rgba(255,255,255,.08);
-      border:1px solid rgba(255,255,255,.14);
-      box-shadow:none;
-    }
-    .info{
-      margin-top:24px;
-      padding:22px;
-      border-radius:var(--radius);
-      background:rgba(255,255,255,.06);
-      border:1px solid rgba(255,255,255,.1);
-      color:var(--muted);
-      line-height:1.65;
-    }
-    .info strong{color:var(--text)}
-    footer{
-      max-width:1100px;
-      margin:0 auto;
-      padding:0 22px 40px;
-      color:#91a4bf;
-      text-align:center;
-    }
-    @media (max-width:760px){
-      .grid{grid-template-columns:1fr}
-      .card{min-height:auto}
-    }
-  </style>
+  <link rel="stylesheet" href="assets/styles.css">
 </head>
 <body>
-  <header>
-    <span class="badge">🎮 English practice for Nicolás</span>
-    <h1>Nico <span class="gradient">English Games</span></h1>
-    <p class="lead">Juegos interactivos para practicar vocabulario de viajes, medios de transporte, pasado simple, escucha y pronunciación desde el navegador.</p>
-  </header>
-
-  <main>
-    <section class="grid" aria-label="Lista de juegos">
-      <article class="card">
-        <div>
-          <div class="level-label">Game 1</div>
-          <h2>Travel Time Machine</h2>
-          <p>Primer juego para repasar viajes, transportes, preguntas básicas y pasado simple de forma didáctica.</p>
-          <div class="tags">
-            <span class="tag">Travel</span>
-            <span class="tag">Transport</span>
-            <span class="tag">Simple Past</span>
-            <span class="tag">Was / Were</span>
-          </div>
+  <div class="container">
+    <header class="site-top">
+      <div class="logo"><span class="logo-mark">NE</span><span>Nico English Games</span></div>
+      <nav class="nav-actions">
+        <a class="ghost" href="./games/travel-time-machine-1/">Game 1</a>
+        <a class="ghost" href="./games/travel-time-machine-2/">Game 2</a>
+        <a class="ghost" href="./games/travel-detective-3/">Game 3</a>
+      </nav>
+    </header>
+    <section class="hero">
+      <div>
+        <span class="kicker">English practice for Nicolás · 7° grado</span>
+        <h1>Travel, transport and simple past games</h1>
+        <p>Three mobile-friendly games for practicing travel vocabulary, transportation, airport and hotel conversations, listening, pronunciation, and simple past.</p>
+        <div class="btn-row">
+          <a class="primary" href="./games/travel-time-machine-1/">Start Game 1</a>
+          <a class="secondary" href="#games">See all games</a>
         </div>
-        <div class="actions">
-          <a class="button" href="./games/travel-time-machine-1/">Jugar Game 1 →</a>
-        </div>
+        <div class="install-box"><b>Mobile ready:</b> all activities use taps instead of drag-and-drop. Voice quality depends on the browser; Edge and Chrome usually provide better English voices.</div>
+      </div>
+      <div class="hero-art"><div class="character">🧑‍🚀</div></div>
+    </section>
+    <section id="games" class="cards-grid">
+      <article class="game-card">
+        <div class="emoji">✈️</div><span class="kicker">Game 1</span><h3>Travel Time Machine 1</h3>
+        <p>Foundation practice: transport categories, travel words, regular past, was/were, did/didn't and sentence building.</p>
+        <div class="tag-row"><span class="tag">Transport</span><span class="tag">Simple Past</span><span class="tag">Was/Were</span></div>
+        <a class="primary" href="./games/travel-time-machine-1/">Play Game 1</a>
       </article>
-
-      <article class="card level2">
-        <div>
-          <div class="level-label">Game 2</div>
-          <h2>Travel Time Machine: Levels</h2>
-          <p>Versión mejorada con progresión real por niveles, desbloqueos, voces, vocabulario ampliado y misión final.</p>
-          <div class="tags">
-            <span class="tag">Levels</span>
-            <span class="tag">Listening</span>
-            <span class="tag">Pronunciation</span>
-            <span class="tag">Mission</span>
-          </div>
-        </div>
-        <div class="actions">
-          <a class="button" href="./games/travel-time-machine-2/">Jugar Game 2 →</a>
-        </div>
+      <article class="game-card">
+        <div class="emoji">🧳</div><span class="kicker">Game 2</span><h3>Travel Time Machine 2</h3>
+        <p>Next level: airport vocabulary, irregular verbs, listening, hotel/taxi dialogues, directions and pronunciation.</p>
+        <div class="tag-row"><span class="tag">Airport</span><span class="tag">Listening</span><span class="tag">Irregular verbs</span></div>
+        <a class="primary" href="./games/travel-time-machine-2/">Play Game 2</a>
+      </article>
+      <article class="game-card">
+        <div class="emoji">🕵️‍♂️</div><span class="kicker">Game 3 · New</span><h3>Travel Detective: Lost Passport</h3>
+        <p>Challenge mode: Nicolás solves a mystery using reading clues, WH questions, sequence words and past simple.</p>
+        <div class="tag-row"><span class="tag">Reading</span><span class="tag">Clues</span><span class="tag">WH questions</span></div>
+        <a class="primary" href="./games/travel-detective-3/">Play Game 3</a>
       </article>
     </section>
-
-    <section class="info">
-      <strong>Recomendación:</strong> usar Microsoft Edge o Google Chrome para obtener mejores voces en inglés. En algunos equipos aparecerán voces como Microsoft Jenny, Aria o Google US English. La calidad depende del navegador y del sistema operativo.
-    </section>
-  </main>
-
-  <footer>
-    Hecho para practicar inglés de forma divertida. Puedes seguir agregando juegos en la carpeta <strong>games/</strong>.
-  </footer>
+    <footer class="footer">Hecho para practicar inglés de forma divertida, con retroalimentación motivadora en español colombiano al pasar cada nivel.</footer>
+  </div>
 </body>
 </html>
